@@ -1,105 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Generator</title>
+<!--#
+        ╥╥  DESIGNED AND DEVELOPED BY...
+        ║║ 
+        ║║ ╓╓──╖╖ ╓╓──── ────╖╖ ╓╖ ╓╓──╖╖ ╓╓──╖╖ TM
+        ║║ ║║  ║║ ║║         ║║ ╙╜ ║║  ║║ ║║  ║║
+    ╓╓──╫╫ ╫╫──╜╜ ╙╙──╖╖ ╓╓──╫╫ ╖╖ ║║  ║║ ║║  ║║
+    ║║  ║║ ║║         ║║ ║║  ║║ ║║ ║║  ║║ ║║  ║║
+    ║║  ║║ ║║         ║║ ║║  ║║ ║║ ║║  ║║ ║║  ║║
+    ║║  ║║ ╙╙──── ────╜╜ ╙╙──╜╜ ║║ ╙╙──╫╫ ╜╜  ║║
+    ║║  ║║  HTTPS://DESAIGN.APP ║║     ║║     ╙╙ LLC
+    ╙╙──╜╜  SINCE TWENTYELEVEN  ╙╙─ ───╜╜
+            Copyright © 2021
+            ALL RIGHTS RESERVED
+            --
+            Call: 1-860-DESAIGN
+            Mail: MEET@DESAIGN.STUDIO
+            Post: PO BOX 200001, AUSTIN TX 78720
+            --
+            Book an appointment with us at
+            https://calendly.com/desaignstudio
+            --
+            Follow us: #desaignstudio
+#-->
 
-  <!-- css -->
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<!--[if IE 8]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
 
-<body>
+<html class="no-js" dir="ltr" lang="en-US">
+  <!--<![endif]-->
 
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ! just for auto-refresh or redirect use the following meta tag -->
+    <!-- <meta http-equiv="refresh" content="61"> -->
+    <!-- <meta http-equiv="refresh" content="0; url=http://website.com/" /> -->
+    <!-- ! -->
+    <!--basic page needs-->
+    <meta name="author" content="Desaign Studio" />
+    <meta name="description" content="Password Generator by Desaign Studio" />
+    <meta name="keywords" content="Password Generator, Desaign, Studio, Digital, Creative, Agency" />
 
-    <div class="container justify-content-center">
+    <title>Password Generator | Desaign Studio</title>
 
-      <!-- range -->
-      <div class="row my-5">
-        <div class="container range-wrap">
-          <div class="range-value" id="rangeV"></div>
-          <input class="form-control-range" id="range" type="range" min="8" max="56" value="20" step="1">
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Password Generator by Desaign Studio" />
+    <link rel="icon" sizes="192x192" href="https://desaign.app/clients/cli/images/1x/favicon.ico" />
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Password Generator by Desaign Studio" />
+    <link rel="apple-touch-icon" href="https://desaign.app/clients/cli/images/1x/black.png" />
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://desaign.app/clients/cli/images/1x/blue.png" />
+    <meta name="msapplication-TileColor" content="#003355" />
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#003355" />
+
+    <!-- Humans Text -->
+    <link type="text/plain" rel="author" href="./humans.txt" />
+    <!-- Robots -->
+    <!-- <meta name="robots" content="noindex, nofollow" /> -->
+
+    <!-- Normalize CSS -->
+    <!-- <link rel="stylesheet" href="https://desaign.app/clients/cli/css/normalize.css" /> -->
+
+    <!-- JQuery -->
+    <script src="https://desaign.app/clients/cli/js/jquery.js" type="text/javascript"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://desaign.app/clients/cli/css/bootstrap.css" />
+    <script src="https://desaign.app/clients/cli/js/bootstrap.js" type="text/javascript"></script>
+
+    <!-- Developer CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Main Container -->
+    <div class="Maincontainer w-100">
+      <div class="container">
+        <!-- range -->
+        <div class="row my-5">
+          <div class="container range-wrap text-monospace">
+            <div class="range-value" id="rangeV"></div>
+            <input class="form-control-range" id="range" type="range" min="8" max="56" value="20" step="1" />
+          </div>
         </div>
-      </div>
 
-      <!-- options to check for password -->
-      <div class="row my-5">
-        <div class="container">
-          <div class="row">
-            <div class="input-group mb-3 col-3 col-sm-3 float-left">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input type="checkbox" checked="checked" id="gridCheck1" aria-label="Checkbox for following text input">
-                </div>
+        <!-- options to check for password -->
+        <div class="row my-5">
+          <div class="col-sm-6 col-md-3">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox"  checked="checked"  id="gridCheck1" aria-label="Checkbox for following text input">
               </div>
-              <label class="form-control" for="gridCheck1">
-                234
-              </label>
+              <label class="form-control" for="gridCheck1"> 234 </label>
             </div>
-            <div class="input-group mb-3 col-3 col-sm-3 float-left">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input type="checkbox" checked="checked" id="gridCheck2" aria-label="Checkbox for following text input">
-                </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox"  checked="checked"  id="gridCheck2" aria-label="Checkbox for following text input">
               </div>
-              <label class="form-control" for="gridCheck2">
-                abc
-              </label>
+              <label class="form-control" for="gridCheck2"> abc </label>
             </div>
-            <div class="input-group mb-3 col-3 col-sm-3 float-left">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input type="checkbox" checked="checked" id="gridCheck3" aria-label="Checkbox for following text input">
-                </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox"  checked="checked"  id="gridCheck3" aria-label="Checkbox for following text input">
               </div>
-              <label class="form-control" for="gridCheck3">
-                ABC
-              </label>
+              <label class="form-control" for="gridCheck3"> ABC </label>
             </div>
-            <div class="input-group mb-3 col-3 col-sm-3 float-left">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input type="checkbox" checked="checked" id="gridCheck4" aria-label="Checkbox for following text input">
-                </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox"  checked="checked"  id="gridCheck4" aria-label="Checkbox for following text input">
               </div>
-              <label class="form-control" for="gridCheck4">
-                @#$
-              </label>
+              <label class="form-control" for="gridCheck4"> @#$ </label>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Generate Password Button -->
-      <div class="text-center">
-        <button class="btn btn-danger my-5" id="generate">Click to Generate Password</button>
-      </div>
-
-      <!-- your password result -->
-      <div class="row my-5 btn btn-block btn-outline-dark">
-        <div class="container my-5">
-          <h1 class="h1 text-break text-monospace" id="myPassword">Pa$$w0rd Generat0r!</h1>
+        <!-- Generate Password Button -->
+        <div class="text-center">
+          <button class="btn btn-danger mb-5" id="generate">Generate Password</button>
         </div>
-      </div>
-      <h6 class="text-center text-muted hideUntilClick invisible"><i>Click to copy this passwrod.</i></h6>
 
+        <!-- your password result -->
+        <div class="row mb-5 btn btn-block btn-outline-dark d-flex justify-content-center">
+          <div class="container my-5">
+            <h1 class="text-break" id="myPassword">Pa$$w0rd Generat0r!</h1>
+          </div>
+        </div>
+        <h6 class="text-center text-muted hideUntilClick invisible"><i>Click password to copy.</i></h6>
+      </div>
     </div>
 
-  </div>
-  <!-- End of main container -->
+    <!-- Footer -->
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark mt-5 ps-3">
+      <a class="navbar-brand" href="https://desaign.app" style="font-size: 1rem !important">POWERED BY <span class="text-warning">DESAIGN.STUDIO</span></a>
+    </nav>
 
-  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark mt-5">
-    <a class="navbar-brand" href="https://desaign.app">POWERED BY <span class="text-warning">DESAIGN.STUDIO</span></a>
-  </nav>
-
-  <!-- js -->
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/popper.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
-
+    <!-- Developer JavaScripts -->
+    <script src="https://desaign.app/clients/cli/javascript/desaign-loader/desaign-loader.js"></script>
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
 </html>
